@@ -1,27 +1,8 @@
-# Practica_proyecto_desde_0_Vite_react
+# React + Vite
 
-Voy a crear un proyecto completo con react usando el template de vite y el framework de Tailwind, para ello seguiremos los siguientes pasos:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 1. Instalación de vite en la carpeta del proyecto:
-     Iremos a la web de vite y seguiremos los pasos para instalar un template de react desde npm.
-### - Instalción del template de vite a traves de la terminal:
+Currently, two official plugins are available:
 
-         npm create vite@latest nombre del proyecto -- --template react
-         // en nombre del proyecto vite nos crea una carpeta con el nombre del proyecto con todas las depencias, 
-         // si ya tenemos la carpeta podemos poner un punto " . " y de esta forma no crea la carpeta sino que 
-         // instala en la carpeta donde estemos con el terminal.
-    
-### - Instalación de npm en la carpeta:
-     
-          Escribimos en la terminal dentro de la carpeta npm install.
-          Después para porder inicializar y ver la web ponemos npm run dev y nos dará un puerto donde se ve la web.
-          Para cerrar basta con teclear ctrl c.
-          
-    
-    
-    
-     
-     
-  3. 
-  4. 
-  
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
