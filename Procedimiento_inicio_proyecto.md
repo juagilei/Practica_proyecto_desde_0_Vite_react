@@ -113,7 +113,7 @@ import './App.css'
        	 </a>
       	</div>
 ```
-
+	- Eliminamos el archivo App.css por que no lo vamos a usar al tener Tailwind. 
 
 
 
