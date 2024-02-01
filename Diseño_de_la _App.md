@@ -22,3 +22,47 @@
 
 	Añadimos a la carpeta del proyecto las carpetas pages y components dentro de la carpeta de trabajo src.
 
+## Creación de las partes de la aplicacion Header, Main, Footer:
+
+Estos archivos y las funcones que declaramos las ponemos con mayusculas por que son componentes.
+
+	
+- Creamos un archivo Header.jsx dentro de la carpeta components con el contenido básico:
+
+```html
+export default function Header() {
+    return <header> esto es el header </header>
+}
+```
+- Creamos un archivo Footer.jsx dentro de la carpeta components con el contenido básico:
+```html
+export default function Footer() {
+    return <footer> esto es el footer</footer>
+}
+```
+- Modificamos el archivo App.jsx:
+
+	- Eliminamos todo lo que no sea necesario.
+	- Importamos los componentes Header y Footer.
+	- Añadimos una etiqueta de main que luego ya modificaremos.
+```
+	import Header from "./components/header"
+	import Footer from "./components/footer"
+
+	function App() {
+
+  	return (
+    	<>
+    	<Header />
+    	<main>Esto es el contenido principal</main>
+    	<Footer />
+
+    	</>
+  	)
+	}
+
+	export default App
+```
+
+
+
