@@ -10,7 +10,9 @@ export default function AppLayout({ children }) {
     return (
         <>
         <Header />
-        <main>{children}</main>
+        {/* Voy a dar un ancho mínimo al main en este caso que tenga un 85% como mínimo del total que se ve.
+        mx-auto es para centrar automatico el contenido margin horizontal "mx" */}
+        <main className="mx-auto min-h-[85vh]">{children}</main>
         <Footer />
         </>
     )

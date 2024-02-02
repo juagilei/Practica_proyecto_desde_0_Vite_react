@@ -1,12 +1,13 @@
 
 import AppLayout from "./components/ui/layouts/AppLayout"
+import { Home } from "./pages"
 
 function App() {
 
   return (
 
     <AppLayout>
-      <p>Esto es el chindren que envio</p>
+      <Home />
     </AppLayout>
 
   )
