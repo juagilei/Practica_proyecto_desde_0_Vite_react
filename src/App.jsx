@@ -1,15 +1,14 @@
-import Header from "./components/header"
-import Footer from "./components/footer"
+
+import AppLayout from "./components/ui/layouts/AppLayout"
 
 function App() {
 
   return (
-    <>
-    <Header />
-    <main>Esto es el contenido principal</main>
-    <Footer />
 
-    </>
+    <AppLayout>
+      <p>Esto es el chindren que envio</p>
+    </AppLayout>
+
   )
 }
 
