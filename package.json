@@ -10,12 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@oku-ui/motion": "^0.3.4",
+    "@tanstack/react-query": "^5.18.1",
+    "connectkit": "^1.7.0-demo",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "viem": "^2.7.1",
+    "wagmi": "^2.5.5"
   },
   "devDependencies": {
+    "@babel/plugin-transform-async-generator-functions": "^7.23.9",
+    "@babel/plugin-transform-optional-catch-binding": "^7.23.4",
+    "@babel/plugin-transform-optional-chaining": "^7.23.4",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/webextension-polyfill": "^0.10.7",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.55.0",
