@@ -4,7 +4,8 @@ que será la parte del main que es lo que cambiará en cada página */}
 
 import Header from "../../Header"
 import Footer from "../../Footer"
-
+import PropTypes from "prop-types"
+{/* Es necesario validar la props de children*/}
 export default function AppLayout({ children }) {
     return (
         <>
@@ -13,5 +14,7 @@ export default function AppLayout({ children }) {
         <Footer />
         </>
     )
-    
+}
+AppLayout.propTypes = {
+    children: PropTypes.node.isRequired
 }
