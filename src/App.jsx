@@ -1,16 +1,20 @@
+import { Web3Provider } from "./config/Web3Provider";
+import { ConnectKitButton } from "connectkit";
+import { AppLayout } from './components/ui/layouts';
+import { Home } from './pages';
 
-import AppLayout from "./components/ui/layouts/AppLayout"
-import { Home } from "./pages"
 
 function App() {
-  const walletConnectProyectId = import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID
   return (
-
+  <Web3Provider>
     <AppLayout>
+      <ConnectKitButton />
       <Home />
     </AppLayout>
+  </Web3Provider>
+   
+
 
   )
 }
-
 export default App
