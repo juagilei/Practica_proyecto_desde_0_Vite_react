@@ -1,4 +1,4 @@
-
+import { ConnectKitButton } from "connectkit";
 export default function Header() {
     return <header className = "flex px-8 py-4 border-b justify-between items-center bg-white"> 
     {/* Logo para mobile*/}
@@ -7,7 +7,7 @@ export default function Header() {
     {/* Esta es la forma de añadir comentarios */} 
         <img src="/public/blockmaker-full-logo.png" className="hidden sm:flex" alt="Blockmaker-logo" width={250}/>
        
-        <button className="bg-gray-200 rounded-md">conectar wallet</button>
+        <ConnectKitButton />
         </header>
 }
 

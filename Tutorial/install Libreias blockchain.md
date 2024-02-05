@@ -151,7 +151,28 @@ function App() {
 }
 export default App
 ```
+## 4.Ubicación del boton:
 
+Una vez instalado el boton de conexión de wallet, lo vanos a poner en el header y a quitar del App, de esta forma se quedará arriba en el header.
+
+	- Borro todo lo referente a ConnectKitButton de App y lo pongo en el header del cual quito el boton que tenía de conectar wallet, quedando el codigo de la siguiente forma:
+
+```jsx
+mport { ConnectKitButton } from "connectkit";
+export default function Header() {
+    return <header className = "flex px-8 py-4 border-b justify-between items-center bg-white"> 
+    {/* Logo para mobile*/}
+        <img src="/public/blockmaker-small-logo.png" className= "sm:hidden" alt="Blockmaker-logo" width={75}/>
+    {/* Logo para desktop */}
+    {/* Esta es la forma de añadir comentarios */} 
+        <img src="/public/blockmaker-full-logo.png" className="hidden sm:flex" alt="Blockmaker-logo" width={250}/>
+       
+		{/* Añado la conexión a la wallet */}
+        <ConnectKitButton />
+        </header>
+}
+```
+ 
 
 
 
