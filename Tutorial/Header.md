@@ -70,3 +70,22 @@ En el diseño responsobo en la tablña de tailwind se ven perfectamente los lím
 
 
 	
+## Añadimos el boton de conectar wallet:
+
+Con ConnectKit y siguiendo sus instrucciones añadimos el boton de conectar wallet y luego ponemos la opción show balance para ver el balance de la wallet.
+El codigo queda de la siguiente forma:
+```
+import { ConnectKitButton } from "connectkit";
+export default function Header() {
+    return <header className = "flex px-8 py-4 border-b justify-between items-center bg-white"> 
+    {/* Logo para mobile*/}
+        <img src="/public/blockmaker-small-logo.png" className= "sm:hidden" alt="Blockmaker-logo" width={75}/>
+    {/* Logo para desktop */}
+    {/* Esta es la forma de añadir comentarios */} 
+        <img src="/public/blockmaker-full-logo.png" className="hidden sm:flex" alt="Blockmaker-logo" width={250}/>
+       
+        <ConnectKitButton showBalance />
+        </header>
+}
+
+```

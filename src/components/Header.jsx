@@ -7,7 +7,7 @@ export default function Header() {
     {/* Esta es la forma de añadir comentarios */} 
         <img src="/public/blockmaker-full-logo.png" className="hidden sm:flex" alt="Blockmaker-logo" width={250}/>
        
-        <ConnectKitButton />
+        <ConnectKitButton showBalance />
         </header>
 }
 
