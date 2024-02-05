@@ -1,18 +1,19 @@
-import { Web3Provider } from "./config/Web3Provider";
-import { AppLayout } from './components/ui/layouts';
-import { Home } from './pages';
-
+import { ConnectKitProvider } from 'connectkit'
+import { WagmiProvider } from 'wagmi'
+import { AppLayout } from './components/ui/layouts'
+import { config } from './config/wagmi'
+import { Home } from './pages'
 
 function App() {
   return (
-  <Web3Provider>
-    <AppLayout>
-      <Home />
-    </AppLayout>
-  </Web3Provider>
-   
-
-
+    <WagmiProvider config={config}>
+      <ConnectKitProvider mode="light">
+        <AppLayout>
+          <Home />
+        </AppLayout>
+      </ConnectKitProvider>
+    </WagmiProvider>
   )
 }
+
 export default App

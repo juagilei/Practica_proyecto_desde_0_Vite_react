@@ -1,28 +1,26 @@
+import PropTypes from 'prop-types'
+import LoadingSpinner from './LoadingSpinner'
 
-import PropTypes from "prop-types"
-
-import LoadingSpinner from "./LoadingSpinner"
-
-export default function Button ({type= 'button', children, disabled, onClick, isLoading}){
-    return <Button 
-    type={type}
-    className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold p-2 px-4 rounded-lg disabled:opacity-50
-    disabled:cursor-not-allowed"
-    disabled={disabled}
-    onClick={onClick}
-    > 
-    <span className='flex justify-center items-center gap-5'>
-        {isLoading && <LoadingSpinner className='w-6 h-6' />}
-        {children} 
-    </span>
-    
-    </Button>
+export default function Button({ type = 'button', children, disabled, onClick, isLoading }) {
+  return (
+    <button
+      type={type}
+      className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+      disabled={disabled}
+      onClick={onClick}
+    >
+      <span className="flex justify-center items-center gap-2">
+        {isLoading && <LoadingSpinner className="w-6 h-6" />}
+        {children}
+      </span>
+    </button>
+  )
 }
-Button.proptypes={
 
-    type: Proptypes.oneOf(['button','submit','reset']),
-    children: Proptypes.node.isRequired,
-    disabled: Proptypes.bool,
-    onClick: Proptypes.func,
-    isLoading: Proptypes.bool
+Button.propTypes = {
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  isLoading: PropTypes.bool
 }
