@@ -90,60 +90,48 @@ Web3Provider. Here you will import the required providers and create a config us
 
 - Me creo una carpeta llamada config la que se crea para poner distintas configuraciones en distintas librerías.
 	- Creo la configuración para wagmi libreía que nos ayuda a trabjar con mejor con hooks en REACT:
-		1. Creo un archivo Web3Provider.tsx y copio la informacion que tengo en el manual de instalación aunque lo hemos variado un poco. Hay que tener encuneta que los nombres de las keys deben de ser los mismos que lops que tengo en el archivo .env.
+		1. Creo un archivo Wagmi.js y copio la informacion que tengo en el manual de instalación aunque lo hemos variado un poco. Hay que tener encuneta que los nombres de las keys deben de ser los mismos que lops que tengo en el archivo .env.
 		2. Además introduzco como red de blockchain { sepolia } para indicar que voy a trabajar en la red de sepolia.
 		3. EL archivo queda de la siguiente manera:
 ```jsx
-import { WagmiProvider, createConfig } from "wagmi";
-import { sepolia } from "wagmi/chains";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ConnectKitProvider, getDefaultConfig } from "connectkit";
-import React from "react";
+import { createConfig } from 'wagmi'
+import { getDefaultConfig } from 'connectkit'
+import { sepolia } from 'wagmi/chains'
 
-const config = createConfig(
+export const config = createConfig(
   getDefaultConfig({
-
     // Required API Keys
-    walletConnectProjectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID!,
+    alchemyId: import.meta.env.VITE_ALCHEMY_ID,
+    walletConnectProjectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID,
 
-    // Required App Info
-    appName: "Blockmaker ERC20 Token",
-
-     // Your dApps chains
-     chains: [sepolia],
-  }),
-);
-
-const queryClient = new QueryClient();
-
-export const Web3Provider = ({ children }) => {
-  return (
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider>{children}</ConnectKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
-  );
-};
-```
+    // Required
+    appName: 'Blockmaker ERC20 Dapp',
+    chains: [sepolia]
+  })
+)```
 
 - Una vez configurado el archivo wagmi.js, necesito envolver la aplicación con wagmi en el archivo App.jsx, ademas de introducir también ConnectKit:
 	1. Procedo a envolver todo lo que tengo en App.	2. Quedando el archivo de la siguiente forma:
 ```jsx
-import { Web3Provider } from "./config/Web3Provider";
-import { ConnectKitButton } from "connectkit";
-import { AppLayout } from './components/ui/layouts';
-import { Home } from './pages';
-
+import { ConnectKitProvider } from 'connectkit'
+import { WagmiProvider } from 'wagmi'
+import { AppLayout } from './components/ui/layouts'
+import { config } from './config/wagmi'
+import { Home } from './pages'
 
 function App() {
   return (
-  <Web3Provider>
-    <AppLayout>
-      <ConnectKitButton />
-      <Home />
-    </AppLayout>
-  </Web3Provider>
+    <WagmiProvider config={config}>
+      <ConnectKitProvider mode="light">
+        <AppLayout>
+          <Home />
+        </AppLayout>
+      </ConnectKitProvider>
+    </WagmiProvider>
+  )
+}
+
+export default App
    
 
 
@@ -158,7 +146,7 @@ Una vez instalado el boton de conexión de wallet, lo vanos a poner en el header
 	- Borro todo lo referente a ConnectKitButton de App y lo pongo en el header del cual quito el boton que tenía de conectar wallet, quedando el codigo de la siguiente forma:
 
 ```jsx
-mport { ConnectKitButton } from "connectkit";
+import { ConnectKitButton } from "connectkit";
 export default function Header() {
     return <header className = "flex px-8 py-4 border-b justify-between items-center bg-white"> 
     {/* Logo para mobile*/}
