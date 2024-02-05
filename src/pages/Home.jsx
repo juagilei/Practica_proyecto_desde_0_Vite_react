@@ -1,6 +1,6 @@
 {/* Home lo voy a sustuir por main en App.jsx */}
 {/* Introduzco un hook de wagmi para que me indique el estado de la conexión de la wallet */}
-import { LoadingSpinner, Button} from "../components/ui";
+import { Button, ErrorInfo} from "../components/ui";
 import { useAccount } from "wagmi";
 export default function Home() {
         const { address, isConnecting, isDisconnected } = useAccount();
@@ -10,8 +10,9 @@ export default function Home() {
     <div>
         <h1> Home </h1>
         <div> Connected Wallet: {address} </div>
-        <LoadingSpinner />
+    
         <Button>Mi componente boton</Button>
+        <ErrorInfo message="este es el mensaje de error"/>
     </div>
     )
 

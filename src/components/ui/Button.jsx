@@ -1,6 +1,8 @@
-import { Proptypes } from "prop-types"
 
-// eslint-disable-next-line react/prop-types
+import PropTypes from "prop-types"
+
+import LoadingSpinner from "./LoadingSpinner"
+
 export default function Button ({type= 'button', children, disabled, onClick, isLoading}){
     return <Button 
     type={type}
@@ -10,13 +12,14 @@ export default function Button ({type= 'button', children, disabled, onClick, is
     onClick={onClick}
     > 
     <span className='flex justify-center items-center gap-5'>
-        {isLoading && <LoadingSpinner className='w-6 h-6'}
+        {isLoading && <LoadingSpinner className='w-6 h-6' />}
         {children} 
     </span>
     
     </Button>
 }
-Button.Proptypes={
+Button.proptypes={
+
     type: Proptypes.oneOf(['button','submit','reset']),
     children: Proptypes.node.isRequired,
     disabled: Proptypes.bool,
