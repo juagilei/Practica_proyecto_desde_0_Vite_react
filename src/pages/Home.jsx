@@ -1,26 +1,13 @@
-{
-  /* Home lo voy a sustuir por main en App.jsx */
-}
-{
-  /* Introduzco un hook de wagmi para que me indique el estado de la conexión de la wallet */
-}
-import { TokenBalance, Owner } from "../components";
-import { Button, ErrorInfo, TextInput, Title } from "../components/ui";
-import { useAccount } from "wagmi";
+import { TokenBalance, Owner, TokenInfo, TransferTokensForm } from '../components'
+
 export default function Home() {
-  const { address, isConnecting, isDisconnected } = useAccount();
-  if (isConnecting) return <div>Connecting...</div>;
-  if (isDisconnected) return <div>Disconnected</div>;
   return (
-    <div>
-      <h1> Home </h1>
-      <div> Connected Wallet: {address} </div>
-      <Owner />
-      <Button>Mi componente boton</Button>
-      <ErrorInfo message="este es el mensaje de error" />
-      <TextInput />
-      <Title> Este componente muestra el título que quieres poner </Title>
+    <section className="flex flex-col place-items-center gap-4 py-20 px-20">
+      <h1>Blockmaker ERC20 Token</h1>
       <TokenBalance />
-    </div>
-  );
+      <Owner />
+      <TokenInfo />
+      <TransferTokensForm />
+    </section>
+  )
 }
