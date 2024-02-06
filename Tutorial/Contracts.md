@@ -8,5 +8,10 @@
 		```jsx
 			export const blockmakerTokenABI = "Pego el contenido del ABI"
 		```
+	nota: Al no hacer export default en el index que creamos basta con poner 
+
+		```
+			export * from './blockmakerTokenABI'
+		```
 
 
