@@ -28,7 +28,7 @@ De la misma forma con:
 const { address, isConnected } = useAccount()
 ```
 
-	POdermos saber si esta conectada la wallet y n o esta pòdemos poner un mensaje de error con el componente error creado con anterioridad:
+	Podermos saber si esta conectada la wallet y n o esta pòdemos poner un mensaje de error con el componente error creado con anterioridad:
 
 ```
  {isConnected ? (
@@ -39,5 +39,12 @@ const { address, isConnected } = useAccount()
         <ErrorInfo message="Conecta tu wallet para ver tu balance de BM" />
       )}
 ```
+	
+	Data tambien nos da un componente symbol.
+
+```
+{tokenBalance} {data?.symbol}
+```
+
 
 

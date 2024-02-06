@@ -1,18 +1,18 @@
-import { useBalance, useAccount } from 'wagmi'
-import { ErrorInfo } from './ui'
+import { useBalance, useAccount } from "wagmi";
+import { ErrorInfo } from "./ui";
 
 export default function TokenBalance() {
-  const { address, isConnected } = useAccount()
+  const { address, isConnected } = useAccount();
 
   const { data, isLoading } = useBalance({
     address,
     token: import.meta.env.VITE_TOKEN_CONTRACT_ADDRESS,
-    watch: true
-  })
+    watch: true,
+  });
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div>Loading...</div>;
 
-  const tokenBalance = data?.formatted
+  const tokenBalance = data?.formatted;
 
   return (
     <div className="bg-white flex w-fit p-1 rounded-md text-xs md:text-base border shadow items-center gap-2">
@@ -25,5 +25,5 @@ export default function TokenBalance() {
         <ErrorInfo message="Conecta tu wallet para ver tu balance de BM" />
       )}
     </div>
-  )
+  );
 }
