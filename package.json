@@ -13,6 +13,7 @@
     "@oku-ui/motion": "^0.3.4",
     "@tanstack/react-query": "^5.18.1",
     "connectkit": "^1.7.0-demo",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
