@@ -2,12 +2,12 @@ import PropTypes from "prop-types"
 import { WagmiProvider, createConfig } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ConnectKitProvider, getDefaultConfig } from 'connectkit';
-import { mainnet } from "wagmi/chains";
+import { sepolia } from "wagmi/chains";
 
 
 const config = createConfig(
   getDefaultConfig({
-    chains: [mainnet],
+    chains: [sepolia],
     appName: 'Blockmaker ERC20 TOKEN',
     walletConnectProjectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID,
   })

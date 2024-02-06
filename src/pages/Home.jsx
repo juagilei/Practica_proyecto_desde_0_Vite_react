@@ -1,6 +1,6 @@
 {/* Home lo voy a sustuir por main en App.jsx */}
 {/* Introduzco un hook de wagmi para que me indique el estado de la conexión de la wallet */}
-import { Button, ErrorInfo} from "../components/ui";
+import { Button, ErrorInfo, TextInput} from "../components/ui";
 import { useAccount } from "wagmi";
 export default function Home() {
         const { address, isConnecting, isDisconnected } = useAccount();
@@ -13,6 +13,7 @@ export default function Home() {
     
         <Button>Mi componente boton</Button>
         <ErrorInfo message="este es el mensaje de error"/>
+        <TextInput />
     </div>
     )
 
