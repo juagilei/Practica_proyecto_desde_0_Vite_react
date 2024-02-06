@@ -4,7 +4,7 @@
 {
   /* Introduzco un hook de wagmi para que me indique el estado de la conexión de la wallet */
 }
-import { TokenBalance } from "../components";
+import { TokenBalance, Owner } from "../components";
 import { Button, ErrorInfo, TextInput, Title } from "../components/ui";
 import { useAccount } from "wagmi";
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
     <div>
       <h1> Home </h1>
       <div> Connected Wallet: {address} </div>
-
+      <Owner />
       <Button>Mi componente boton</Button>
       <ErrorInfo message="este es el mensaje de error" />
       <TextInput />
