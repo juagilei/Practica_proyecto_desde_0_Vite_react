@@ -1,7 +1,7 @@
 import { Button, TextInput, Title } from "./ui";
 import { useState, useEffect } from "react";
 import {
-  useContractWrite,
+  useWriteContract,
   usePrepareContractWrite,
   useWaitForTransaction,
 } from "wagmi";
@@ -18,7 +18,7 @@ export default function TransferTokensForm() {
     args: [to, BigInt(amount * 10 ** 18)],
   });
 
-  const { data: writeData, write } = useContractWrite(config);
+  const { data: writeData, write } = useWriteContract(config);
 
   const {
     isLoading: isTransactionLoading,
