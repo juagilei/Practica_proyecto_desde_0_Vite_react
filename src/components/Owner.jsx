@@ -10,9 +10,9 @@ export default function Owner() {
   })
 
   return (
-    <di className="bg-white p-4 border shadow rounded-md">
+    <div className="bg-white p-4 border shadow rounded-md">
       <Title>Owner</Title>
       <p className="bg-gray-100 text-zinc-600 p-2 rounded-md text-sm">{data}</p>
-    </di>
+    </div>
   )
 }
