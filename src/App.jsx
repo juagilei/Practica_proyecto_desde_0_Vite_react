@@ -1,18 +1,15 @@
-import { ConnectKitProvider } from 'connectkit'
-import { WagmiProvider } from 'wagmi'
+
 import { AppLayout } from './components/ui/layouts'
-import { config } from './config/wagmi'
+import { Web3Provider } from './config/Web3Provider'
 import { Home } from './pages'
 
 function App() {
   return (
-    <WagmiProvider config={config}>
-      <ConnectKitProvider mode="light">
+    <Web3Provider>
         <AppLayout>
           <Home />
         </AppLayout>
-      </ConnectKitProvider>
-    </WagmiProvider>
+    </Web3Provider>
   )
 }
 

@@ -10,7 +10,7 @@ export default function Button({ type = 'button', children, disabled, onClick, i
       onClick={onClick}
     >
       <span className="flex justify-center items-center gap-2">
-        {isLoading && <LoadingSpinner className="w-6 h-6" />}
+      {isLoading && <LoadingSpinner className="w-6 h-6" />}
         {children}
       </span>
     </button>
